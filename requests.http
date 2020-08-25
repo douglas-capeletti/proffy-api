@@ -1,0 +1,35 @@
+//HEALTH
+GET  http://localhost:8000/health
+###
+//GET CLASSES
+GET http://localhost:8000/classes?week_day=2&subject=Química&time=9%3A00
+###
+//CREATE CLASSES
+POST http://localhost:8000/classes
+Content-Type: application/json
+
+{
+    "name": "Douglas Paz",
+    "avatar": "http://lorempixel.com/400/200/",
+    "whatsapp": "+5551991883334",
+    "bio": "Some bio here",
+    "subject": "quimica",
+    "cost": 80,
+    "schedule": [
+        { "week_day": 2, "from": "8:00", "to": "12:00" },
+        { "week_day": 4, "from": "8:00", "to": "12:00" },
+        { "week_day": 6, "from": "8:00", "to": "12:00" }
+    ]
+}
+###
+//GET TOTAL CONNECTIONS
+GET http://localhost:8000/connections/count
+###
+//CREATE CONNECTION
+POST http://localhost:8000/connections
+Content-Type: application/json
+
+{
+    "user_id": 1
+}
+###
